@@ -12,7 +12,7 @@ pub fn build(b: *std.Build) void {
         }),
     });
 
-    exe.addCSourceFile(.{ .file = "src/bundler.c" });
+    exe.addCSourceFile(.{ .file = b.path("src/bundler.c") });
     exe.linkLibC();
 
     b.installArtifact(exe);
